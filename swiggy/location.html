@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://kit.fontawesome.com/5e60e11a93.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location 1</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #screen {
+            width: 100%;
+            height: 4450px;
+            /* border: 5px solid red; */
+        }
+
+        #navbar {
+            width: 100%;
+            height: 90px;
+            border: 1px solid black;
+            display: flex;
+            /* position: fixed; */
+            background-color: white;
+        }
+
+        #navbar>div:nth-child(1) {
+            width: 15%;
+            height: 65px;
+            /* border: 1px solid black;   */
+            text-align: right;
+            box-sizing: border-box;
+            padding-top: 10px;
+        }
+
+        #navbar>div:nth-child(1)>img {
+            width: 30%;
+            height: 65px;
+            /* border: 1px solid black; */
+        }
+
+        #navbar>div:nth-child(2) {
+            width: 9%;
+            height: 30px;
+            /* border: 1px solid black; */
+            margin-top: 25px;
+            letter-spacing: 1px;
+            font-weight: bolder;
+            padding-bottom: 5px;
+            border-right: 1px solid rgb(209, 207, 207);
+        }
+
+        #navbar>div:nth-child(3) {
+            width: 21%;
+            height: 30px;
+            /* border: 1px solid red; */
+            display: flex;
+            margin-top: 35px;
+            margin-left: 15px;
+        }
+
+        #navbar>div:nth-child(3)>i {
+            padding-top: 5px;
+            padding-left: 5px;
+            color: rgb(243, 74, 13);
+            font-size: 23px;
+        }
+
+        #navbar>div:nth-child(3)>h3 {
+            padding-top: 5px;
+            padding-left: 5px;
+        }
+
+        #navbar>div:nth-child(3)>select {
+            padding-top: 5px;
+            padding-left: 0px;
+            color: rgb(243, 74, 13);
+            border: none;
+        }
+
+        #navbar>div:nth-child(4) {
+            width: 35%;
+            height: 50px;
+            /* border: 1px solid red; */
+            margin-top: 23px;
+            margin-left: 10px;
+            border-radius: 15px;
+            background-color: rgb(238, 235, 235);
+        }
+
+        #navbar>div:nth-child(4)>input {
+            margin-left: 10px;
+            margin-top: 18px;
+            width: 210px;
+            font-weight: bolder;
+            background-color: rgb(238, 235, 235);
+            border: none;
+        }
+
+        #navbar>div:nth-child(4)>i {
+            margin-left: 220px;
+        }
+
+        #navbar>div:nth-child(5) {
+            width: 3.6%;
+            height: 48px;
+            /* border: 1px solid red; */
+            margin-top: 23px;
+            margin-left: 30px;
+            background-color: black;
+            border-radius: 25px;
+        }
+
+        #navbar>div:nth-child(5)>i {
+            color: white;
+            margin-left: 11px;
+            margin-top: 8px;
+            font-size: 30px;
+        }
+
+        #order {
+            width: 100%;
+            height: 330px;
+            /* border: 1px solid red; */
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            display: flex;
+            background-color: rgb(198, 201, 211);
+        }
+
+        #order>div:nth-child(1) {
+            width: 25%;
+            height: 70%;
+            /* border: 1px solid red; */
+            font-size: 23px;
+            margin-left: 160px;
+            margin-top: 6%;
+        }
+
+        #order>div:nth-child(2) {
+            width: 40%;
+            height: 100%;
+            /* border: 1px solid red; */
+            /* font-size: 23px; */
+            margin-left: 100px;
+            /* margin-top: 6%; */
+        }
+
+        #order>div:nth-child(2)>img {
+            width: 100%;
+            height: 100%;
+            margin-left: 50px;
+        }
+
+        #what {
+            width: 70%;
+            height: 40px;
+            /* border: 1px solid red; */
+            margin-top: 40px;
+            margin-left: 205px;
+            display: flex;
+        }
+
+        #what>:nth-child(2) {
+            width: 3.6%;
+            height: 35px;
+            /* border: 1px solid red; */
+            margin-left: 68%;
+            text-align: center;
+            box-sizing: border-box;
+            padding-top: 10px;
+            border-radius: 20px;
+            color: rgb(151, 144, 144);
+            background-color: rgb(221, 224, 236);
+        }
+
+        #what>:nth-child(3) {
+            width: 3.6%;
+            height: 35px;
+            /* border: 1px solid red; */
+            margin-left: 10px;
+            text-align: center;
+            box-sizing: border-box;
+            padding-top: 10px;
+            border-radius: 20px;
+            color: rgb(46, 44, 44);
+            background-color: rgb(198, 201, 211);
+        }
+
+        #image {
+            width: 70%;
+            height: 240px;
+            /* border: 1px solid red; */
+            margin-left: 205px;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid rgb(194, 193, 193);
+
+        }
+
+        #image>:nth-child(1) {
+            width: 13%;
+            height: 180px;
+            /* border: 1px solid red; */
+
+        }
+
+        #image>:nth-child(2) {
+            width: 13%;
+            height: 180px;
+            /* border: 1px solid red; */
+
+        }
+
+        #image>:nth-child(3) {
+            width: 13%;
+            height: 180px;
+            /* border: 1px solid red; */
+
+        }
+
+        #image>:nth-child(4) {
+            width: 13%;
+            height: 180px;
+            /* border: 1px solid red; */
+
+        }
+
+        #image>:nth-child(5) {
+            width: 13%;
+            height: 180px;
+            /* border: 1px solid red; */
+
+        }
+
+        #image>:nth-child(6) {
+            width: 13%;
+            height: 180px;
+            /* border: 1px solid red; */
+
+        }
+
+        #chain {
+            width: 77%;
+            height: 40px;
+            /* border: 1px solid red; */
+            margin-top: 40px;
+            margin-left: 210px;
+            display: flex;
+        }
+
+        #chain>:nth-child(2) {
+            width: 3.6%;
+            height: 35px;
+            /* border: 1px solid red; */
+            margin-left: 48%;
+            text-align: center;
+            box-sizing: border-box;
+            padding-top: 10px;
+            border-radius: 20px;
+            color: rgb(151, 144, 144);
+            background-color: rgb(221, 224, 236);
+        }
+
+        #chain>:nth-child(3) {
+            width: 3.6%;
+            height: 35px;
+            /* border: 1px solid red; */
+            margin-left: 10px;
+            text-align: center;
+            box-sizing: border-box;
+            padding-top: 10px;
+            border-radius: 20px;
+            color: rgb(46, 44, 44);
+            background-color: rgb(198, 201, 211);
+        }
+
+        #product {
+            width: 70%;
+            height: 350px;
+            /* border: 1px solid red; */
+            margin-left: 205px;
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            /* border-bottom: 1px solid rgb(194, 193, 193); */
+
+        }
+
+        #product>div {
+            width: 31%;
+            height: 330px;
+            /* border: 1px solid red; */
+        }
+
+        #product>div>img {
+            width: 100%;
+            height: 200px;
+            /* border: 1px solid red; */
+            border-radius: 20px;
+        }
+
+        #product>div>h3 {
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+        #product>div>i {
+            margin-top: 10px;
+            margin-left: 10px;
+            color: rgb(9, 172, 9);
+            margin-right: 5px;
+        }
+
+        #product>div>p {
+            margin-top: 5px;
+            color: grey;
+            margin-left: 10px;
+        }
+
+        #range {
+            width: 4%;
+            height: 5px;
+            /* border: 1px solid grey; */
+            margin: auto;
+            border-radius: 10px;
+            background-color: rgb(223, 217, 217);
+        }
+
+        #range>div {
+            width: 15%;
+            height: 5px;
+            /* border: 1px solid red; */
+            background-color: orangered;
+        }
+
+        #bord {
+            width: 70%;
+            height: 2px;
+            /* border: 1px solid red; */
+            margin: auto;
+            margin-top: 50px;
+            background-color: rgb(242, 237, 237);
+        }
+
+        #delivery {
+            width: 70%;
+            height: 40px;
+            /* border: 1px solid red; */
+            margin: auto;
+            margin-top: 30px;
+        }
+
+        #filter {
+            width: 70%;
+            height: 35px;
+            /* border: 1px solid red; */
+            margin: auto;
+            margin-top: 15px;
+            display: flex;
+        }
+
+        #filter>div:nth-child(1) {
+            width: 8%;
+            height: 35px;
+            border: 1px solid rgb(179, 175, 175);
+            border-radius: 20px;
+            display: flex;
+            box-sizing: border-box;
+            padding-top: 8px;
+            padding-left: 10px;
+            color: rgb(153, 150, 150);
+        }
+
+        #filter>div:nth-child(1)>i {
+            padding-left: 5px;
+        }
+
+        #filter>div:nth-child(2) {
+            width: 9%;
+            height: 35px;
+            border: 1px solid rgb(179, 175, 175);
+            border-radius: 20px;
+            display: flex;
+            box-sizing: border-box;
+            padding-top: 8px;
+            padding-left: 10px;
+            color: rgb(153, 150, 150);
+            margin-left: 10px;
+        }
+
+        #filter>div:nth-child(2)>i {
+            padding-left: 5px;
+            color: black;
+            font-size: 10px;
+            padding-top: 5px;
+        }
+
+        #filter>div:nth-child(3) {
+            width: 11%;
+            height: 35px;
+            border: 1px solid rgb(179, 175, 175);
+            border-radius: 20px;
+            display: flex;
+            box-sizing: border-box;
+            padding-top: 8px;
+            padding-left: 10px;
+            color: rgb(153, 150, 150);
+            margin-left: 10px;
+        }
+
+        #filter>div:nth-child(4) {
+            width: 10%;
+            height: 35px;
+            border: 1px solid rgb(179, 175, 175);
+            border-radius: 20px;
+            display: flex;
+            box-sizing: border-box;
+            padding-top: 8px;
+            padding-left: 10px;
+            color: rgb(153, 150, 150);
+            margin-left: 10px;
+        }
+
+        #filter>div:nth-child(5) {
+            width: 9%;
+            height: 35px;
+            border: 1px solid rgb(179, 175, 175);
+            border-radius: 20px;
+            display: flex;
+            box-sizing: border-box;
+            padding-top: 8px;
+            padding-left: 10px;
+            color: rgb(153, 150, 150);
+            margin-left: 10px;
+        }
+
+        #filter>div:nth-child(6) {
+            width: 7%;
+            height: 35px;
+            border: 1px solid rgb(179, 175, 175);
+            border-radius: 20px;
+            display: flex;
+            box-sizing: border-box;
+            padding-top: 8px;
+            padding-left: 10px;
+            color: rgb(153, 150, 150);
+            margin-left: 10px;
+        }
+
+        #filter>div:nth-child(7) {
+            width: 13%;
+            height: 35px;
+            border: 1px solid rgb(179, 175, 175);
+            border-radius: 20px;
+            display: flex;
+            box-sizing: border-box;
+            padding-top: 8px;
+            padding-left: 10px;
+            color: rgb(153, 150, 150);
+            margin-left: 10px;
+        }
+
+        #filter>div:nth-child(8) {
+            width: 14%;
+            height: 35px;
+            border: 1px solid rgb(179, 175, 175);
+            border-radius: 20px;
+            display: flex;
+            box-sizing: border-box;
+            padding-top: 8px;
+            padding-left: 10px;
+            color: rgb(153, 150, 150);
+            margin-left: 10px;
+        }
+
+        #anda {
+            width: 70%;
+            height: 830px;
+            /* border: 1px solid red; */
+            margin: auto;
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        #anda>div {
+            width: 22.5%;
+            height: 250px;
+            /* border: 1px solid red; */
+        }
+
+        #anda>div>img {
+            width: 100%;
+            height: 150px;
+            /* border: 1px solid red; */
+            border-radius: 15px;
+        }
+
+        #anda>div>h3 {
+            margin-top: 5px;
+            margin-left: 10px;
+        }
+
+        #anda>div>i {
+            margin-top: 5px;
+            margin-left: 10px;
+            color: rgb(9, 172, 9);
+            margin-right: 5px;
+        }
+
+        #anda>div>p {
+            margin-top: 5px;
+            color: grey;
+            margin-left: 10px;
+        }
+
+        #show {
+            width: 23%;
+            height: 50px;
+            border: 1px solid rgb(202, 199, 199);
+            margin: auto;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            box-sizing: border-box;
+            padding-left: 100px;
+        }
+
+        #more {
+            width: 85%;
+            height: 2px;
+            /* border: 1px solid red; */
+            margin: auto;
+            margin-top: 30px;
+            background-color: rgb(242, 237, 237);
+        }
+
+        #culture {
+            width: 85%;
+            height: 30px;
+            /* border: 1px solid red; */
+            margin: auto;
+            margin-top: 50px;
+            /* font-size: 20px; */
+            font-weight: bolder;
+
+        }
+
+        #para {
+            width: 85%;
+            height: 200px;
+            border: 1px solid rgb(223, 219, 219);
+            border-radius: 10px;
+            margin: auto;
+            margin-top: 15px;
+            /* font-size: 20px; */
+            margin-bottom: 50px;
+           
+
+        }
+        #para>h1{
+            font-weight: bolder;
+            margin-top: 15px;
+            margin-left: 15px;
+            margin-bottom: 20px;
+        }
+        #para>:nth-child(2){
+            margin-left: 15px;
+        }
+        #para>:nth-child(3){
+            margin-top: 10px;
+            margin-left: 15px;
+            font-size: 13px;
+            color: red;
+        }
+      
+        #explore{
+            width: 85%;
+            height: 40px;
+            /* border: 1px solid red; */
+            margin: auto;
+            margin-top: 70px;
+        }
+        #eat{
+            width: 85%;
+            height: 230px;
+            /* border: 1px solid red; */
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        #eat>div{
+            width: 22%;
+            height: 50px;
+            border: 1px solid rgb(200, 197, 197);
+            border-radius: 10px;
+            text-align: center;
+            color: rgb(48, 46, 46);
+            box-sizing: border-box;
+            padding-top: 15px;
+           
+        }
+        #explores{
+            width: 85%;
+            height: 40px;
+            /* border: 1px solid red; */
+            margin: auto;
+            margin-top: 70px;
+            margin-bottom: 15px;
+        }
+        #peoples{
+            width: 85%;
+            height: 230px;
+            /* border: 1px solid red; */
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        #peoples>div{
+            width: 22%;
+            height: 50px;
+            border: 1px solid rgb(48, 46, 46);
+            border-radius: 10px;
+            text-align: center;
+            color: rgb(108, 106, 106);
+            box-sizing: border-box;
+            padding-top: 15px;
+           
+        }
+        #footer {
+            width: 100%;
+            height: 1150px;
+            border: 1px solid rgb(1, 1, 26);
+            margin-top: 20px;
+            background-color: rgb(1, 1, 22);
+        }
+
+        #top {
+            width: 88%;
+            height: 335px;
+            /* border: 1px solid blue; */
+            /* margin-top: 20px; */
+            margin-left: 6%;
+            margin-top: 60px;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid grey;
+            color: rgb(230, 218, 218);
+            font-weight: lighter;
+        }
+
+        #top>div:nth-child(1) {
+            width: 16%;
+            height: 330px;
+            /* border: 1px solid blue; */
+            line-height: 30px;
+            font-size: 15px;
+
+        }
+
+        #top>div:nth-child(1)>h4 {
+            margin-bottom: 20px;
+            color: rgb(165, 163, 163);
+
+        }
+
+        #top>div:nth-child(2) {
+            width: 13%;
+            height: 330px;
+            /* border: 1px solid blue; */
+            line-height: 30px;
+            font-size: 15px;
+
+        }
+
+        #top>div:nth-child(2)>h4 {
+            margin-bottom: 20px;
+            color: rgb(165, 163, 163);
+
+        }
+
+        #top>div:nth-child(3) {
+            width: 30%;
+            height: 330px;
+            /* border: 1px solid blue; */
+            line-height: 27px;
+            font-size: 15px;
+
+        }
+
+        #top>div:nth-child(3)>h4 {
+            margin-bottom: 20px;
+            color: rgb(165, 163, 163);
+
+        }
+
+        #top>div:nth-child(4) {
+            width: 20%;
+            height: 330px;
+            /* border: 1px solid blue; */
+
+        }
+
+        #top>div:nth-child(4)>img {
+            width: 100%;
+            height: 70px;
+            margin-bottom: 30px;
+
+        }
+
+        #bottom {
+            width: 88%;
+            height: 610px;
+            /* border: 1px solid blue; */
+            margin-top: 30px;
+            margin-left: 6%;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid grey;
+
+            font-weight: lighter;
+        }
+
+        #bottom>div {
+            width: 15%;
+            height: 560px;
+            /* border: 1px solid blue; */
+            line-height: 30px;
+            font-size: 15px;
+            color: rgb(230, 218, 218);
+        }
+
+        #bottom>div:nth-child(1)>h4 {
+            margin-bottom: 15px;
+            color: rgb(165, 163, 163);
+        }
+
+        #bottom>div:nth-child(2)>h4 {
+            margin-bottom: 15px;
+            color: rgb(1, 1, 22);
+        }
+
+        #bottom>div:nth-child(3)>h4 {
+            margin-bottom: 15px;
+            color: rgb(1, 1, 22);
+        }
+
+        #bottom>div:nth-child(4)>h4 {
+            margin-bottom: 15px;
+            color: rgb(1, 1, 22);
+        }
+        #end{
+            width: 88%;
+            height: 100px;
+            /* border: 1px solid blue; */
+            margin-left: 6%;
+            display: flex;
+        }
+        #end>:nth-child(1){
+            width: 13%;
+            height: 40px;
+            /* border: 1px solid blue; */
+            margin-top: 30px;
+        }
+        #end>p{
+            width: 60%;
+            height: 25px;
+            /* border: 1px solid blue; */
+            margin-top: 40px;
+            margin-left: 5%;
+            color: white;
+            font-size: 20px;
+            text-align: center;
+        }
+        #end>:nth-child(3){
+            width: 2%;
+            height: 22px;
+            /* border: 1px solid blue; */
+            margin-top: 40px;
+            margin-left: 5%;
+        }
+        #end>:nth-child(4){
+            width: 2%;
+            height: 22px;
+            /* border: 1px solid blue; */
+            margin-top: 40px;
+            margin-left: 2%;
+        }
+        #end>:nth-child(5){
+            width: 2%;
+            height: 22px;
+            /* border: 1px solid blue; */
+            margin-top: 40px;
+            margin-left: 2%;
+        }
+        #end>:nth-child(6){
+            width: 2%;
+            height: 22px;
+            /* border: 1px solid blue; */
+            margin-top: 40px;
+            margin-left: 2%;
+        }
+        #end>:nth-child(7){
+            width: 2%;
+            height: 22px;
+            /* border: 1px solid blue; */
+            margin-top: 40px;
+            margin-left: 2%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="screen">
+        <div id="navbar">
+            <div>
+                <img src="https://logosandtypes.com/wp-content/uploads/2021/01/Swiggy.png" />
+            </div>
+            <div>
+                <h1>Swiggy</h1>
+            </div>
+            <div>
+                <i class="fa-solid fa-location-arrow"></i>
+                <h3><a href="home.html">Setup your precise location</a></h3>
+               <select></select>
+            </div>
+            <div>
+                <input type="search" placeholder="Search for restaurant and food" />
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div>
+                <i class="fa-solid fa-user"></i>
+            </div>
+        </div>
+        <div id="order">
+            <div>
+                <h1>Order Food</br> Online in</br> Mumbai</h1>
+            </div>
+            <div>
+                <img
+                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1002,h_600/v1678428358/portal/m/seo_web/dweb_header" />
+            </div>
+        </div>
+        <div id="what">
+            <h2>What's on your mind</h2>
+            <div><i class="fa-solid fa-arrow-left-long"></i></div>
+            <div><i class="fa-solid fa-arrow-right-long"></i></div>
+        </div>
+        <div id="image">
+            <img
+                src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/rng/md/carousel/production/fb304a49f0f1632a219e004e9545774e" />
+            <img
+                src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029845/PC_Creative%20refresh/3D_bau/banners_new/Burger" />
+            <img
+                src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029856/PC_Creative%20refresh/3D_bau/banners_new/Pizza" />
+            <img
+                src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029848/PC_Creative%20refresh/3D_bau/banners_new/Chinese" />
+            <img
+                src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029858/PC_Creative%20refresh/3D_bau/banners_new/Rolls" />
+            <img
+                src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029851/PC_Creative%20refresh/3D_bau/banners_new/Ice_Creams" />
+        </div>
+        <div id="chain">
+            <h2>Top Restaurant Chains in Mumbai</h2>
+            <div><i class="fa-solid fa-arrow-left-long"></i></div>
+            <div><i class="fa-solid fa-arrow-right-long"></i></div>
+        </div>
+        <div id="product">
+            <div>
+                <img
+                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/7bb739d7f6ae8b4ce8ed590765dffd2f" />
+                <h3>McDonald's</h3>
+                <i class="fa-solid fa-star"></i>4.3
+                <p>Burgers, Beverages, Cafe, Desserts</br>Kadivali East</p>
+            </div>
+            <div>
+                <img
+                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/98086d394755a98f3da232a1e157fec5" />
+                <h3>Burger King</h3>
+                <i class="fa-solid fa-star"></i>4.1
+                <p>Burgers, American</br>Kadivali East</p>
+            </div>
+            <div>
+                <img
+                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/0bf19a82b109b40c2f5c56d00f071a33" />
+                <h3>Subway</h3>
+                <i class="fa-solid fa-star"></i>4.3
+                <p>Salads, Snacks, Desserts, Beverages</br>Kadivali East</p>
+            </div>
+
+        </div>
+        <div id="range">
+            <div></div>
+        </div>
+        <div id="bord"></div>
+        <div id="delivery">
+            <h2>Restaurants with Online Food Delivery in Mumbai</h2>
+        </div>
+        <div id="filter">
+            <div>
+                <p>Filter</p><i class="fa-solid fa-right-left"></i>
+            </div>
+            <div>
+                <p>Sort By</p><i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div>
+                <p>Fast Delivery</p>
+            </div>
+            <div>
+                <p>Rating 40+</p>
+            </div>
+            <div>
+                <p>Pure Veg</p>
+            </div>
+            <div>
+                <p>Offers</p>
+            </div>
+            <div>
+                <p>Rs. 300-Rs. 600</p>
+            </div>
+            <div>
+                <p>Less than Rs. 300</p>
+            </div>
+        </div>
+        <div id="anda">
+            <div>
+                <img
+                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/yapwvcqos61l5ukjwuc7" />
+                <h3>Anda Apna Apna</h3>
+                <i class="fa-solid fa-star"></i>4.2
+                <p>Fast Food</br>Malad West</p>
+            </div>
+            <div>
+                <img
+                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/sowgakiwshxlrgdljd3c" />
+                <h3>Jango's</h3>
+                <i class="fa-solid fa-star"></i>4.1
+                <p>Chinese, North Indian, Birya...</br>Malad West</p>
+            </div>
+            <div>
+                <img
+                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/ivlz1wsuj7mskow2gl9r" />
+                <h3>Bhagavati Pav Bhaji</h3>
+                <i class="fa-solid fa-star"></i>4.1
+                <p>Street Food, Chinese, South...</br>Kandivali West</p>
+            </div>
+            <div>
+                <img
+                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/mdhdu94jtcv0wu9gnqc5" />
+                <h3>Granville Greens</h3>
+                <i class="fa-solid fa-star"></i>4.1
+                <p>North Indian, South Indian...</br>Borivali</p>
+            </div>
+            <div>
+                <img
+                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/ywn45g8yt1wbw3qoett8" />
+                <h3>Red Hot Chillies</h3>
+                <i class="fa-solid fa-star"></i>3.9
+                <p>Chinese, Indian, Tandoor</br>Mira Road</p>
+            </div>
+            <div>
+                <img
+                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/tvikm9lg3a4hhsxik0hq" />
+                <h3>Kolkata Konnection</h3>
+                <i class="fa-solid fa-star"></i>4.1
+                <p>North Indian, Biryani, Bengali</br>Jog Gor West</p>
+            </div>
+            <div>
+                <img
+                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/ihnmji7jz9ogp3pfgczd" />
+                <h3>Laziz Seekh Paratha</h3>
+                <i class="fa-solid fa-star"></i>4.1
+                <p>Chinese, Mughlai</br>Jog Gor West</p>
+            </div>
+            <div>
+                <img
+                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/grkcyzco5i0tjaglyaxl" />
+                <h3>Qutuz Irani Cafe</h3>
+                <i class="fa-solid fa-star"></i>4.2
+                <p>Fast Food</br>Chincholi Bunder Road</p>
+            </div>
+            <div>
+                <img
+                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/7bb739d7f6ae8b4ce8ed590765dffd2f" />
+                <h3>McDonald's</h3>
+                <i class="fa-solid fa-star"></i>4.3
+                <p>Burgers, Beverages, Cafe...</br>Kadivali East</p>
+            </div>
+            <div>
+                <img
+                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/98086d394755a98f3da232a1e157fec5" />
+                <h3>Burger King</h3>
+                <i class="fa-solid fa-star"></i>4.1
+                <p>Burgers, American</br>Kadivali East</p>
+            </div>
+            <div></div>
+            <div></div>
+        </div>
+        <div id="show">
+            <h4>Show More</h4><i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div id="more"></div>
+        <div id="culture">
+            <h2>Food culture in Mumbai</h2>
+        </div>
+        <div id="para">
+            <h1>Why Choose Swiggy to Order Food Online in Mumbai?</h1>
+            <p>The food delivery business has a strong growth curve in the market. The demand for online food order has
+                increased immensely in the past few years, giving you absolutely no reason as to why you should miss out
+                on them. Everybody is busy in their lives nowadays and have so little time for their everyday activities
+                that they want immediate solutions for their problems at a reasonable price right at their doorway. With
+                the culture of online food delivery in Mumbai gaining popularity, many restaurants are joining the
+                digital venture with Swiggy. With so many options available, people have now become habituated to the
+                convenience and safety that the system of food delivery in Mumbai provides, making them order food
+                online every single time.</p>
+                <p>See More <i class="fa-solid fa-chevron-down"></i></p>
+        </div>
+        <div id="explore">
+            <h2>Explore localities in and around Mumbai</h2>
+        </div>
+        <div id="eat">
+            <div><p>Kharghara</p></div>
+            <div><p>Andheri</p></div>
+            <div><p>Gharsoli</p></div>
+            <div><p>Ovali</p></div>
+            <div><p>Girgaon</p></div>
+            <div><p>Dapoli</p></div>
+            <div><p>Wawanje</p></div>
+            <div><p>Bokadvira</p></div>
+            <div><p>Chanje</p></div>
+            <div><p>Karanja</p></div>
+            <div><p>Ongc Dronagiri</p></div>
+            <div><p>Show More<i class="fa-solid fa-chevron-down"></i></p></div>
+        </div>
+        <div id="explores">
+            <h2>What's Mumbai Eating! People Ordering in Mumbai</h2>
+        </div>
+        <div id="peoples">
+            <div><p>Afghani</p></div>
+            <div><p>American</p></div>
+            <div><p>Arabian</p></div>
+            <div><p>Asian</p></div>
+            <div><p>Bakery</p></div>
+            <div><p>Barbecue</p></div>
+            <div><p>Bengali</p></div>
+            <div><p>Beverages</p></div>
+            <div><p>Bihari</p></div>
+            <div><p>Biryani</p></div>
+            <div><p>Burgers</p></div>
+            <div><p>Show More<i class="fa-solid fa-chevron-down"></i></p></div>
+        </div>
+        <div id="footer">
+            <div id="top">
+                <div>
+                    <h4>COMPANY</h4>
+                    <h3> About us</h3>
+                    <h3> Team</h3>
+                    <h3> Careers</h3>
+                    <h3> Swiggy Blog</h3>
+                    <h3> Bug Bounty</h3>
+                    <h3>Swiggy One</h3>
+                    <h3> Swiggy Corporate</h3>
+                    <h3> Swiggy Instamar</h3>
+                    <h3> Swiggy Genie</h3>
+
+                </div>
+                <div>
+                    <h4>CONTACT</h4>
+                    <h3>Help & Support</h3>
+                    <h3>Partner with us</h3>
+                    <h3>Ride with us</hh3>
+                </div>
+                <div>
+                    <h4>LEGAL</h4>
+
+
+                    <h3> Terms & Conditions</h3>
+                    <h3> Refund & Cancellation</h3>
+                    <h3> Privacy Policy</h3>
+                    <h3> Cookie Policy</h3>
+                    <h3> Offer Terms</h3>
+                    <h3> Phishing & Fraud</h3>
+                    <h3> Corporate – Swiggy Money Codes Terms and Conditions</h3>
+                    <h3> Corporate - Swiggy Discount Voucher Terms and Conditions</h3>
+                </div>
+                <div>
+                    <img
+                        src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_200,h_65/icon-AppStore_lg30tv" />
+                    <img
+                        src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_200,h_65/icon-GooglePlay_1_zixjxl" />
+                </div>
+            </div>
+            <div id="bottom">
+                <div>
+                    <h4>WE DELIVER TO</h4>
+                    <h3></h3>
+                    <h3> Abohar</h3>
+                    <h3> Adilabad</h3>
+                    <h3> Adityapur</h3>
+                    <h3> Adoni</h3>
+                    <h3> Agartala</h3>
+                    <h3> Agra</h3>
+                    <h3> Ahmedabad</h3>
+                    <h3> Ahmednagar</h3>
+                    <h3> Aizawl</h3>
+                    <h3> Ajmer</h3>
+                    <h3> Akola</h3>
+                    <h3> Alappuzha</h3>
+                    <h3> Aligarh</h3>
+                    <h3> Alipurduar</h3>
+                    <h3> Allahabad</h3>
+                    <h3> Almora</h3>
+                    <h3> Alwar</h3>
+                </div>
+                <div>
+                    <h4>.</h4>
+                    <h3> Dehradun</h3>
+                    <h3> Dehri</h3>
+                    <h3> Delhi</h3>
+                    <h3> Deoghar</h3>
+                    <h3> Deoria-City</h3>
+                    <h3> Dewas</h3>
+                    <h3> Dhanbad</h3>
+                    <h3> Dhar</h3>
+                    <h3> Dharamshala</h3>
+                    <h3> Dharapuram</h3>
+                    <h3> Dharmapuri</h3>
+                    <h3> Dharwad</h3>
+                    <h3> Dholpur</h3>
+                    <h3> Dhule</h3>
+                    <h3> Dibrugarh</h3>
+                    <h3> Digboi</h3>
+                    <h3> Dimapur</h3>
+
+                </div>
+                <div>
+                    <h4>.</h4>
+                    <h3> Khanna</h3>
+                    <h3> Kharagpur</h3>
+                    <h3> Kishanganj</h3>
+                    <h3> Kishangarh</h3>
+                    <h3>Kochi</h3>
+                    <h3> Kodaikanal</h3>
+                    <h3> Kohima</h3>
+                    <h3> Kokrajhar</h3>
+                    <h3> Kolar</h3>
+                    <h3> Kolhapur</h3>
+                    <h3> Kolkata</h3>
+                    <h3> Kollam</h3>
+                    <h3> Koppal</h3>
+                    <h3> Korba</h3>
+                    <h3> Kota</h3>
+                    <h3> Kotdwar</h3>
+                    <h3> Kothagudem</h3>
+                </div>
+                <div>
+                    <h4>.</h4>
+                    <h3> Purulia </h3>
+                    <h3> Pusad </h3>
+                    <h3> Puttur </h3>
+                    <h3> Rae-Bareli </h3>
+                    <h3> Raghunathpur </h3>
+                    <h3> Raichur </h3>
+                    <h3> Raiganj </h3>
+                    <h3> Raigarh </h3>
+                    <h3> Raipur </h3>
+                    <h3> Rajahmundry </h3>
+                    <h3> Rajampet </h3>
+                    <h3> Rajapalayam </h3>
+                    <h3> Rajgarh </h3>
+                    <h3> Rajkot </h3>
+                    <h3> Rajnandgaon </h3>
+                    <h3> Rajsamand </h3>
+                    <h3> Ramagundam </h3>
+
+                </div>
+            </div>
+            <div id="end">
+                <img
+                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_284/Logo_f5xzza" />
+                <p>@ 2023 Swiggy</p>
+                <img
+                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_48,h_48/icon-facebook_tfqsuc" />
+                <img
+                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_48,h_48/icon-pinterest_kmz2wd" />
+                <img
+                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_48,h_48/icon-instagram_b7nubh" />
+                <img
+                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_48,h_48/icon-instagram_b7nubh" />
+                <img
+                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_48,h_48/icon-twitter_gtq8dv" />
+            </div>
+
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

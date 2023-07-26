@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://kit.fontawesome.com/5e60e11a93.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Info3</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        #singleproduct {
+            width: 100%;
+            /* border: 5px solid red; */
+            
+        }
+
+        #sp {
+            width: 100%;
+            height: 400px;
+            border: 1px solid rgb(160, 160, 163);
+            display: flex;
+        }
+
+        #sp>div{
+            width: 50%;
+            height: 100;
+        }
+        #sp>div>img {
+            width: 100%;
+            height: 100%;
+            /* border: 1px solid black; */
+        }
+
+        #sp>div>h2 {
+            margin-top: 20px;
+           color: rgb(110, 10, 10);
+           text-align: center;
+        }
+        #sp>div>h3 {
+            margin-top: 20px;
+           text-align: center;
+        }
+        #sp>div>h4 {
+           margin-top: 20px;
+           text-align: center;
+           font-size: 15px;
+        }
+
+        #sp>div>button {
+            width: 40%;
+            height: 10%;
+           margin-top: 150px;
+          margin-left: 30%;
+           text-align: center;
+           font-size: 15px;
+           border-radius: 10px;
+           background-color: rgb(110, 10, 10);
+           color: white;
+        }
+
+
+        #screen {
+            width: 100%;
+            height: 2000px;
+            /* border: 5px solid red; */
+        }
+
+        #navbars {
+            width: 100%;
+            height: 90px;
+            /* border: 12px solid black; */
+            border-bottom:1px solid rgb(207, 202, 202);
+            position: fixed;
+            top: 0;
+        }
+        #navbar {
+            width: 100%;
+            height: 90px;
+            /* border-bottom: 1px solid black; */
+            display: flex;
+            /* position: fixed; */
+            background-color: white;
+            
+        }
+
+        #navbar>div:nth-child(1) {
+            width: 6%;
+            height: 90px;
+            /* border: 1px solid black; */
+        }
+
+        #navbar>div:nth-child(1)>img {
+            width: 100%;
+            height: 90px;
+            /* border: 1px solid black; */
+
+        }
+
+        #navbar>div:nth-child(2) {
+            width: 42%;
+            height: 90px;
+            /* border: 1px solid black; */
+            display: flex;
+        }
+
+        #navbar>div:nth-child(2)>p:nth-child(1) {
+            font-size: 15px;
+            font-weight: bolder;
+            text-decoration: underline;
+            padding-top: 38px;
+            padding-left: 10px;
+        }
+
+        #navbar>div:nth-child(2)>p:nth-child(2) {
+            font-size: 15px;
+            color: grey;
+            padding-top: 38px;
+            padding-left: 10px;
+        }
+
+        #navbar>div:nth-child(2)>select {
+            font-size: 20px;
+            color: orangered;
+            margin-left: 10px;
+            border: none;
+
+        }
+
+        #navbar>div:nth-child(3) {
+            width: 52%;
+            height: 90px;
+            /* border: 1px solid black; */
+            /* font-size: 20px; */
+            display: flex;
+        }
+
+        #navbar>div:nth-child(3)>div {
+            width: 18%;
+            height: 90px;
+            /* border: 1px solid red; */
+            font-size: 18px;
+            display: flex;
+            box-sizing: border-box;
+            padding-top: 33px;
+            padding-left: 10px;
+        }
+
+        #navbar>div:nth-child(3)>div:nth-child(1)>i {
+            width: 20%;
+            height: 30px;
+            /* border: 1px solid red; */
+            padding-top: 2px;
+
+        }
+
+        #navbar>div:nth-child(3)>div:nth-child(1)>p {
+            color: grey;
+            font-weight: bolder;
+            padding-left: 10px;
+
+        }
+
+        #navbar>div:nth-child(3)>div:nth-child(2)>i {
+            width: 20%;
+            height: 30px;
+            /* border: 1px solid red; */
+            padding-top: 2px;
+
+        }
+
+        #navbar>div:nth-child(3)>div:nth-child(2)>p {
+            color: grey;
+            font-weight: bolder;
+            padding-left: 10px;
+
+        }
+
+        #navbar>div:nth-child(3)>div:nth-child(2)>p>sup {
+            color: orangered;
+            font-size: 10px;
+        }
+
+        #navbar>div:nth-child(3)>div:nth-child(3)>i {
+            width: 20%;
+            height: 30px;
+            /* border: 1px solid red; */
+            padding-top: 2px;
+
+        }
+
+        #navbar>div:nth-child(3)>div:nth-child(3)>p {
+            color: grey;
+            font-weight: bolder;
+            padding-left: 10px;
+
+        }
+
+        #navbar>div:nth-child(3)>div:nth-child(4)>i {
+            width: 20%;
+            height: 30px;
+            /* border: 1px solid red; */
+            padding-top: 2px;
+
+        }
+
+        #navbar>div:nth-child(3)>div:nth-child(4)>p {
+            color: grey;
+            font-weight: bolder;
+            padding-left: 10px;
+
+        }
+
+        #navbar>div:nth-child(3)>div:nth-child(5)>i {
+            width: 20%;
+            height: 30px;
+            /* border: 1px solid red; */
+            padding-top: 2px;
+
+        }
+
+        #navbar>div:nth-child(3)>div:nth-child(5)>p {
+            color: grey;
+            font-weight: bolder;
+            padding-left: 10px;
+
+        }
+
+        #first {
+            width: 65%;
+            height: 50px;
+            /* border: 1px solid red; */
+            margin-left: 15.5%;
+            margin-top: 90px;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+
+        }
+
+        #first>div:nth-child(1) {
+            width: 35%;
+            height: 50px;
+            /* border: 1px solid red; */
+            font-size: 10px;
+            text-align: center;
+            padding-top: 20px;
+            box-sizing: border-box;
+
+        }
+
+        #first>div:nth-child(2) {
+            width: 10%;
+            height: 50px;
+            /* border: 1px solid red; */
+            font-size: 20px;
+            text-align: right;
+            padding-top: 16px;
+            box-sizing: border-box;
+
+
+        }
+
+        #main {
+            width: 60%;
+            /* height: 900px; */
+            /* border: 2px solid black; */
+            margin-left: 20%;
+
+        }
+
+        #relax {
+            width: 100%;
+            height: 30px;
+            /* border: 1px solid red; */
+            display: flex;
+            color: grey;
+        }
+
+        #relax>:nth-child(2) {
+            width: 7%;
+            height: 30px;
+            border: 1px solid rgb(221, 216, 216);
+            display: flex;
+            justify-content: space-evenly;
+            margin-left: 63.7%;
+            color: rgb(9, 147, 9);
+            font-weight: bolder;
+            box-sizing: border-box;
+            padding-top: 5px;
+        }
+
+        #rating {
+            width: 100%;
+            height: 35px;
+            /* border: 1px solid red; */
+            font-size: 12px;
+            display: flex;
+            margin-top: 20px;
+            /* border-bottom: 1px dotted rgb(229, 220, 220); */
+            color: grey;
+
+        }
+
+        #rating>:nth-child(2) {
+            width: 7%;
+            height: 35px;
+            border: 1px solid rgb(221, 216, 216);
+            margin-left: 81.7%;
+            font-weight: bolder;
+            font-size: 12px;
+            box-sizing: border-box;
+            padding-top: 10px;
+            border-top: none;
+            border-bottom: none;
+            text-align: center;
+        }
+
+        #apply {
+            width: 100%;
+            height: 35px;
+            /* border: 1px dotted red; */
+            margin-top: 10px;
+            display: flex;
+            /* word-spacing: 5px; */
+            color: grey;
+            font-size: 13px;
+            border-bottom: 1px dotted rgb(140, 133, 133);
+        }
+
+        #apply>:nth-child(2) {
+            box-sizing: border-box;
+            padding-left: 10px;
+        }
+
+        #apply>:nth-child(1) {
+            font-size: 14px;
+
+        }
+
+        #min {
+            width: 100%;
+            height: 35px;
+            /* border: 1px solid red; */
+            margin-top: 10px;
+            display: flex;
+            box-sizing: border-box;
+            padding-top: 8px;
+        }
+
+        #min>:nth-child(2) {
+            padding-left: 12px;
+        }
+
+        #min>:nth-child(3) {
+            padding-left: 30px;
+        }
+
+        #min>:nth-child(4) {
+            padding-left: 12px;
+        }
+
+        #use {
+            width: 100%;
+            height: 50px;
+            /* border: 1px solid red; */
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+
+        #use>div {
+            width: 24%;
+            height: 50px;
+            border: 1px solid rgb(208, 199, 199);
+            border-radius: 5px;
+            display: flex;
+            font-size: 15px;
+            flex-wrap: wrap;
+            box-sizing: border-box;
+            padding-top: 8px;
+        }
+
+        #use>div>h4 {
+            padding-left: 10px;
+        }
+
+        #use>div>img {
+            width: 13%;
+            height: 22px;
+            padding-left: 5px;
+        }
+
+        #use>div>p {
+            font-size: 10px;
+            color: rgb(97, 95, 95);
+            padding-left: 7px;
+            font-weight: 900;
+        }
+
+        #veg {
+            width: 100%;
+            height: 60px;
+            /* border: 1px solid red; */
+            border-bottom: .1px solid rgb(174, 168, 168);
+            margin-top: 40px;
+            display: flex;
+            color: rgb(65, 64, 64);
+            font-weight: bold;
+            box-sizing: border-box;
+            padding-top: 15px;
+            padding-left: 10px;
+        }
+
+        #veg>div {
+            width: 4%;
+            height: 17px;
+            /* border: 1px solid grey; */
+            background-color: rgb(207, 197, 197);
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-left: 10px;
+        }
+
+        #veg>div>div {
+            width: 40%;
+            height: 14px;
+            /* border: 1px solid grey; */
+            background-color: white;
+            margin-left: 2px;
+            margin-top: 1px;
+        }
+
+        #veg>select {
+            width: 1.2%;
+            height: 7px;
+            margin-left: 10px;
+            border: none;
+            padding-top: 10px;
+
+        }
+
+        #pic {
+            width: 97%;
+            height: 25px;
+            /* border: 1px solid red; */
+            margin-top: 20px;
+            margin-left: 10px;
+            font-weight: bolder;
+            font-size: 17px;
+        }
+
+        #item {
+            width: 100%;
+            height: 400px;
+            /* border: 1px solid red; */
+            margin-top: 20px;
+            display: flex;
+            /* justify-content: space-around; */
+        }
+
+        #item>div {
+            width: 45%;
+            height: 400px;
+            /* border: 1px solid red; */
+            border-radius: 10px;
+        }
+
+        #item>div>img {
+            width: 100%;
+            height: 400px;
+            /* border: 1px solid red; */
+            /* border-radius: 10px; */
+        }
+
+        #item>div:nth-child(1) {
+            margin-left: 10px;
+        }
+
+        #item>div:nth-child(2) {
+            margin-left: 70px;
+        }
+
+        #bott {
+            width: 8%;
+            height: 10px;
+            /* border: 1px solid red; */
+            margin-left: 45%;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #bott>div {
+            width: 22%;
+            height: 4px;
+            /* border: 1px solid red; */
+            border-radius: 5px;
+            background-color: rgb(183, 175, 175);
+        }
+        #bott>div:nth-child(1){
+            background-color: rgb(54, 7, 7);
+        }
+
+
+        #border {
+            width: 100;
+            border: 5px solid rgb(217, 236, 231);
+            margin-top: 40px;
+        }
+        #footer {
+            width: 100%;
+            height: 1150px;
+            border: 1px solid rgb(1, 1, 26);
+            margin-top: 20px;
+            background-color: rgb(1, 1, 22);
+        }
+
+        #top {
+            width: 88%;
+            height: 335px;
+            /* border: 1px solid blue; */
+            /* margin-top: 20px; */
+            margin-left: 6%;
+            margin-top: 60px;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid grey;
+            color: rgb(230, 218, 218);
+            font-weight: lighter;
+        }
+
+        #top>div:nth-child(1) {
+            width: 16%;
+            height: 330px;
+            /* border: 1px solid blue; */
+            line-height: 30px;
+            font-size: 15px;
+
+        }
+
+        #top>div:nth-child(1)>h4 {
+            margin-bottom: 20px;
+            color: rgb(165, 163, 163);
+
+        }
+
+        #top>div:nth-child(2) {
+            width: 13%;
+            height: 330px;
+            /* border: 1px solid blue; */
+            line-height: 30px;
+            font-size: 15px;
+
+        }
+
+        #top>div:nth-child(2)>h4 {
+            margin-bottom: 20px;
+            color: rgb(165, 163, 163);
+
+        }
+
+        #top>div:nth-child(3) {
+            width: 30%;
+            height: 330px;
+            /* border: 1px solid blue; */
+            line-height: 27px;
+            font-size: 15px;
+
+        }
+
+        #top>div:nth-child(3)>h4 {
+            margin-bottom: 20px;
+            color: rgb(165, 163, 163);
+
+        }
+
+        #top>div:nth-child(4) {
+            width: 20%;
+            height: 330px;
+            /* border: 1px solid blue; */
+
+        }
+
+        #top>div:nth-child(4)>img {
+            width: 100%;
+            height: 70px;
+            margin-bottom: 30px;
+
+        }
+
+        #bottom {
+            width: 88%;
+            height: 610px;
+            /* border: 1px solid blue; */
+            margin-top: 30px;
+            margin-left: 6%;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid grey;
+
+            font-weight: lighter;
+        }
+
+        #bottom>div {
+            width: 15%;
+            height: 560px;
+            /* border: 1px solid blue; */
+            line-height: 30px;
+            font-size: 15px;
+            color: rgb(230, 218, 218);
+        }
+
+        #bottom>div:nth-child(1)>h4 {
+            margin-bottom: 15px;
+            color: rgb(165, 163, 163);
+        }
+
+        #bottom>div:nth-child(2)>h4 {
+            margin-bottom: 15px;
+            color: rgb(1, 1, 22);
+        }
+
+        #bottom>div:nth-child(3)>h4 {
+            margin-bottom: 15px;
+            color: rgb(1, 1, 22);
+        }
+
+        #bottom>div:nth-child(4)>h4 {
+            margin-bottom: 15px;
+            color: rgb(1, 1, 22);
+        }
+        #end{
+            width: 88%;
+            height: 100px;
+            /* border: 1px solid blue; */
+            margin-left: 6%;
+            display: flex;
+        }
+        #end>:nth-child(1){
+            width: 13%;
+            height: 40px;
+            /* border: 1px solid blue; */
+            margin-top: 30px;
+        }
+        #end>p{
+            width: 60%;
+            height: 25px;
+            /* border: 1px solid blue; */
+            margin-top: 40px;
+            margin-left: 5%;
+            color: white;
+            font-size: 20px;
+            text-align: center;
+        }
+        #end>:nth-child(3){
+            width: 2%;
+            height: 22px;
+            /* border: 1px solid blue; */
+            margin-top: 40px;
+            margin-left: 5%;
+        }
+        #end>:nth-child(4){
+            width: 2%;
+            height: 22px;
+            /* border: 1px solid blue; */
+            margin-top: 40px;
+            margin-left: 2%;
+        }
+        #end>:nth-child(5){
+            width: 2%;
+            height: 22px;
+            /* border: 1px solid blue; */
+            margin-top: 40px;
+            margin-left: 2%;
+        }
+        #end>:nth-child(6){
+            width: 2%;
+            height: 22px;
+            /* border: 1px solid blue; */
+            margin-top: 40px;
+            margin-left: 2%;
+        }
+        #end>:nth-child(7){
+            width: 2%;
+            height: 22px;
+            /* border: 1px solid blue; */
+            margin-top: 40px;
+            margin-left: 2%;
+        }
+
+    </style>
+</head>
+
+<body>
+   
+    <div id="screen">
+        <div id="navbars">
+            <div id="navbar">
+                <div>
+                    <img src="https://logosandtypes.com/wp-content/uploads/2021/01/Swiggy.png" />
+    
+                </div>
+                <div>
+                    <p>Vashi</p>
+                    <p>Navi Mumbai, Maharashtra, India</p>
+                    <select></select>
+                </div>
+                <div>
+                    <div>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <p>Search</p>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-gear"></i>
+                        <p>Offers<sup>NEW</sup></p>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-circle-info"></i>
+                        <p>Help</p>
+                    </div>
+                   
+                    <div>
+                        <i class="fa-brands fa-square-font-awesome-stroke"></i>
+                        <p>Cart</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="first">
+            <div>
+                <p>Home /
+                    Mumbai /
+                    Vashi / Chaayos / Chai+Snacks=Relax</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </div>
+        <div id="main">
+            <div id="relax">
+                <h3>Chaayos Chai+Snacks=Relax</h3>
+                <div><i class="fa-solid fa-star"></i>
+                    <p>4.3</p>
+                </div>
+            </div>
+            <div id="rating">
+                <p>Bakery, Beverages</br>
+
+                    Vashi
+
+                    1.8 km
+
+                    ▾</p>
+                <div>
+                    <p>1k+rating</p>
+                </div>
+            </div>
+            <div id="apply">
+                <i class="fa-solid fa-bicycle"></i>
+                <p>1.8 kms | ₹34 Delivery fee will apply</p>
+            </div>
+            <div id="min">
+                <i class="fa-solid fa-clock"></i>
+                <h4>16 MINS</h4>
+                <i class="fa-solid fa-indian-rupee-sign"></i>
+                <h4>₹250 for two</h4>
+            </div>
+            <div id="use">
+                <div>
+                    <img
+                        src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_28,h_28/Store_Assets/Icons/OfferIconCart" />
+                    <h4>40% OFF UPTO ₹80 </h4>
+                    <p>USE TRYNEW | ABOVE ₹159</p>
+                </div>
+                <div>
+                    <img
+                        src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_28,h_28/Store_Assets/Icons/OfferIconCart" />
+                    <h4>FLAT ₹125 OFF </h4>
+                    <p>USE FLATDEAL | ABOVE ₹599</p>
+                </div>
+                <div>
+                    <img
+                        src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_28,h_28/rng/md/ads/production/1acdb97aadcb61b323307845bda86535" />
+                    <h4>20% OFF UPTO ₹120 </h4>
+                    <p>USE FEDERALCC | ABOVE ₹249</p>
+                </div>
+                <div>
+                    <img
+                        src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_28,h_28/rng/md/ads/production/6ef0fc65ca643ecbdcf8a930599c7edd" />
+                    <h4>15% OFF UPTO ₹100 </h4>
+                    <p>USE HSBCFEST | ABOVE ₹499</p>
+                </div>
+            </div>
+            <div id="veg">
+                <h4>Veg Only</h4>
+                <div>
+                    <div></div>
+                </div>
+                <select></select>
+            </div>
+            <div id="singleproduct"></div>
+            <!-- <div id="pic">
+                <h3>Top Picks</h3>
+            </div>
+            <div id="item">
+                <div>
+                    <img
+                        src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_628,h_704/TopPicks/CarChi" />
+
+                </div>
+                <div>
+                    <img
+                        src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_628,h_704/TopPicks/DkchoCh" />
+                </div>
+            </div> -->
+            <div id="bott">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div id="border"></div>
+        </div>
+        <div id="footer">
+            <div id="top">
+                <div>
+                    <h4>COMPANY</h4>
+                    <h3> About us</h3>
+                    <h3> Team</h3>
+                    <h3> Careers</h3>
+                    <h3> Swiggy Blog</h3>
+                    <h3> Bug Bounty</h3>
+                    <h3>Swiggy One</h3>
+                    <h3> Swiggy Corporate</h3>
+                    <h3> Swiggy Instamar</h3>
+                    <h3> Swiggy Genie</h3>
+
+                </div>
+                <div>
+                    <h4>CONTACT</h4>
+                    <h3>Help & Support</h3>
+                    <h3>Partner with us</h3>
+                    <h3>Ride with us</hh3>
+                </div>
+                <div>
+                    <h4>LEGAL</h4>
+
+
+                    <h3> Terms & Conditions</h3>
+                    <h3> Refund & Cancellation</h3>
+                    <h3> Privacy Policy</h3>
+                    <h3> Cookie Policy</h3>
+                    <h3> Offer Terms</h3>
+                    <h3> Phishing & Fraud</h3>
+                    <h3> Corporate – Swiggy Money Codes Terms and Conditions</h3>
+                    <h3> Corporate - Swiggy Discount Voucher Terms and Conditions</h3>
+                </div>
+                <div>
+                    <img
+                        src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_200,h_65/icon-AppStore_lg30tv" />
+                    <img
+                        src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_200,h_65/icon-GooglePlay_1_zixjxl" />
+                </div>
+            </div>
+            <div id="bottom">
+                <div>
+                    <h4>WE DELIVER TO</h4>
+                    <h3></h3>
+                    <h3> Abohar</h3>
+                    <h3> Adilabad</h3>
+                    <h3> Adityapur</h3>
+                    <h3> Adoni</h3>
+                    <h3> Agartala</h3>
+                    <h3> Agra</h3>
+                    <h3> Ahmedabad</h3>
+                    <h3> Ahmednagar</h3>
+                    <h3> Aizawl</h3>
+                    <h3> Ajmer</h3>
+                    <h3> Akola</h3>
+                    <h3> Alappuzha</h3>
+                    <h3> Aligarh</h3>
+                    <h3> Alipurduar</h3>
+                    <h3> Allahabad</h3>
+                    <h3> Almora</h3>
+                    <h3> Alwar</h3>
+                </div>
+                <div>
+                    <h4>.</h4>
+                    <h3> Dehradun</h3>
+                    <h3> Dehri</h3>
+                    <h3> Delhi</h3>
+                    <h3> Deoghar</h3>
+                    <h3> Deoria-City</h3>
+                    <h3> Dewas</h3>
+                    <h3> Dhanbad</h3>
+                    <h3> Dhar</h3>
+                    <h3> Dharamshala</h3>
+                    <h3> Dharapuram</h3>
+                    <h3> Dharmapuri</h3>
+                    <h3> Dharwad</h3>
+                    <h3> Dholpur</h3>
+                    <h3> Dhule</h3>
+                    <h3> Dibrugarh</h3>
+                    <h3> Digboi</h3>
+                    <h3> Dimapur</h3>
+
+                </div>
+                <div>
+                    <h4>.</h4>
+                    <h3> Khanna</h3>
+                    <h3> Kharagpur</h3>
+                    <h3> Kishanganj</h3>
+                    <h3> Kishangarh</h3>
+                    <h3>Kochi</h3>
+                    <h3> Kodaikanal</h3>
+                    <h3> Kohima</h3>
+                    <h3> Kokrajhar</h3>
+                    <h3> Kolar</h3>
+                    <h3> Kolhapur</h3>
+                    <h3> Kolkata</h3>
+                    <h3> Kollam</h3>
+                    <h3> Koppal</h3>
+                    <h3> Korba</h3>
+                    <h3> Kota</h3>
+                    <h3> Kotdwar</h3>
+                    <h3> Kothagudem</h3>
+                </div>
+                <div>
+                    <h4>.</h4>
+                    <h3> Purulia </h3>
+                    <h3> Pusad </h3>
+                    <h3> Puttur </h3>
+                    <h3> Rae-Bareli </h3>
+                    <h3> Raghunathpur </h3>
+                    <h3> Raichur </h3>
+                    <h3> Raiganj </h3>
+                    <h3> Raigarh </h3>
+                    <h3> Raipur </h3>
+                    <h3> Rajahmundry </h3>
+                    <h3> Rajampet </h3>
+                    <h3> Rajapalayam </h3>
+                    <h3> Rajgarh </h3>
+                    <h3> Rajkot </h3>
+                    <h3> Rajnandgaon </h3>
+                    <h3> Rajsamand </h3>
+                    <h3> Ramagundam </h3>
+
+                </div>
+            </div>
+            <div id="end">
+                <img
+                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_284/Logo_f5xzza" />
+                <p>@ 2023 Swiggy</p>
+                <img
+                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_48,h_48/icon-facebook_tfqsuc" />
+                <img
+                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_48,h_48/icon-pinterest_kmz2wd" />
+                <img
+                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_48,h_48/icon-instagram_b7nubh" />
+                <img
+                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_48,h_48/icon-instagram_b7nubh" />
+                <img
+                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_48,h_48/icon-twitter_gtq8dv" />
+            </div>
+
+        </div>
+    </div>
+    </div>
+   
+    <script>
+        window.onload = function () {
+
+            
+            var product = JSON.parse(localStorage.getItem("scurrent_product"));
+
+            var divtoappendproduct = document.getElementById("singleproduct");
+            var structure = `<div id='sp'>
+                <div><img src=${product.pimage} /></div>
+                <div>
+                <h2>${product.ptitle}</h2>
+                <h3>${product.pname}</h3>
+                <h4>Rs.${product.pprice}</h4> 
+                <button onclick='addcart(${JSON.stringify(product)})'>Add to Cart</button></div>
+                </div>`;
+            console.log(structure, "here");
+            divtoappendproduct.innerHTML = structure; 
+
+        }
+        function addcart(product) {
+            // alert("adding to cart"); 
+
+            var currentUser = JSON.parse(localStorage.getItem("S_currentuser"));
+
+            var data = JSON.parse(localStorage.getItem("S_user"));
+
+
+            for (var i = 0; i<data.length; i++){
+                if(currentUser.email == data[i].email){
+                    // alert("got");
+                    if(data[i].cartproduct == undefined){
+                        data[i].cartproduct == [product];
+                    }else{
+                        data[i].cartproduct.push(product);
+
+                    }alert("product added to cart");
+                    window.location.href = "./cart.html";
+                }
+            }
+            localStorage.setItem("S_user", JSON.stringify(data));
+        }
+    </script>
+</body>
+
+</html>
+
+

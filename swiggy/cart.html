@@ -1,0 +1,1585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <script src="https://kit.fontawesome.com/5e60e11a93.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>order success</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #screen {
+            width: 100%;
+            height: 1500px;
+            /* border: 2px solid red; */
+            background-color: rgb(237, 241, 243);
+        }
+        #practproduct{
+            width: 100%;
+            /* height: 10%; */
+            /* border: 1px solid red; */
+            margin-top: 25px;
+        }
+        #cart{
+            width: 100%;
+            height: 100px;
+            /* border: 10px solid red; */
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #cart>div:nth-child(1){
+            width: 40%;
+            height: 100%;
+            border: 1px solid rgb(212, 212, 214);
+            border-radius: 10px;
+        }
+        #cart>div:nth-child(2){
+            width: 45%;
+            height: 100%;
+            border: 1px solid rgb(212, 212, 214);
+            border-radius: 10px;
+            
+        }
+        #cart>div:nth-child(2)>h3{
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        #cart>div>img{
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+
+        #navbars {
+            width: 100%;
+            height: 90px;
+            /* border: 12px solid black; */
+            border-bottom:1px solid rgb(207, 202, 202);
+            position: fixed;
+            top: 0;
+            z-index: 1;
+        }
+        #navbar {
+            width: 100%;
+            height: 90px;
+            /* border-bottom: 1px solid black; */
+            display: flex;
+            /* position: fixed; */
+            background-color: white;
+            
+        }
+
+        #navbar>div:nth-child(1) {
+            width: 6%;
+            height: 90px;
+            /* border: 1px solid black; */
+        }
+
+        #navbar>div:nth-child(1)>img {
+            width: 100%;
+            height: 90px;
+            /* border: 1px solid black; */
+
+        }
+
+        #navbar>div:nth-child(2) {
+            width: 42%;
+            height: 90px;
+            /* border: 1px solid black; */
+            display: flex;
+        }
+
+        #navbar>div:nth-child(2)>p:nth-child(1) {
+            font-size: 15px;
+            font-weight: bolder;
+            text-decoration: underline;
+            padding-top: 38px;
+            padding-left: 10px;
+        }
+
+        #navbar>div:nth-child(2)>p:nth-child(2) {
+            font-size: 15px;
+            color: grey;
+            padding-top: 38px;
+            padding-left: 10px;
+        }
+
+        #navbar>div:nth-child(2)>select {
+            font-size: 20px;
+            color: orangered;
+            margin-left: 10px;
+            border: none;
+
+        }
+
+        #navbar>div:nth-child(3) {
+            width: 52%;
+            height: 90px;
+            /* border: 1px solid black; */
+            /* font-size: 20px; */
+            display: flex;
+        }
+
+        #navbar>div:nth-child(3)>div {
+            width: 18%;
+            height: 90px;
+            /* border: 1px solid red; */
+            font-size: 18px;
+            display: flex;
+            box-sizing: border-box;
+            padding-top: 33px;
+            padding-left: 10px;
+        }
+
+        #navbar>div:nth-child(3)>div:nth-child(1)>i {
+            width: 20%;
+            height: 30px;
+            /* border: 1px solid red; */
+            padding-top: 2px;
+
+        }
+
+
+        #navbar>div:nth-child(3)>div:nth-child(1)>p {
+            color: grey;
+            font-weight: bolder;
+            padding-left: 10px;
+
+        }
+
+        #navbar>div:nth-child(3)>div:nth-child(2)>i {
+            width: 20%;
+            height: 30px;
+            /* border: 1px solid red; */
+            padding-top: 2px;
+
+        }
+
+        #navbar>div:nth-child(3)>div:nth-child(2)>p {
+            color: grey;
+            font-weight: bolder;
+            padding-left: 10px;
+
+        }
+
+        #navbar>div:nth-child(3)>div:nth-child(2)>p>sup {
+            color: orangered;
+            font-size: 10px;
+        }
+
+        #navbar>div:nth-child(3)>div:nth-child(3)>i {
+            width: 20%;
+            height: 30px;
+            /* border: 1px solid red; */
+            padding-top: 2px;
+
+        }
+
+        #navbar>div:nth-child(3)>div:nth-child(3)>p {
+            color: grey;
+            font-weight: bolder;
+            padding-left: 10px;
+
+        }
+
+        #navbar>div:nth-child(3)>div:nth-child(4)>i {
+            width: 20%;
+            height: 30px;
+            /* border: 1px solid red; */
+            padding-top: 2px;
+
+        }
+
+        #navbar>div:nth-child(3)>div:nth-child(4)>p {
+            color: grey;
+            font-weight: bolder;
+            padding-left: 10px;
+
+        }
+
+        #navbar>div:nth-child(3)>div:nth-child(5)>i {
+            width: 20%;
+            height: 30px;
+            /* border: 1px solid red; */
+            padding-top: 2px;
+
+        }
+
+        #navbar>div:nth-child(3)>div:nth-child(5)>p {
+            color: grey;
+            font-weight: bolder;
+            padding-left: 10px;
+
+        }
+
+       
+
+        #main {
+            width: 90%;
+            /* height: 1800px; */
+            /* border: 2px solid red; */
+            margin: auto;
+            margin-top: 100px;
+            display: flex;
+            justify-content: space-between;
+            
+        }
+
+        #left {
+            width: 67%;
+            /* height: 1270px; */
+            /* border: 1px solid black; */
+        }
+
+
+        #right {
+            width: 30.5%;
+            height: 1083px;
+            /* border: 10px solid black; */
+            background-color: white;
+            position: relative;
+
+        }
+
+        #login {
+            width: 100%;
+            height: 130px;
+            border: 1px solid white;
+            background-color: white;
+
+        }
+
+
+        #login>div:nth-child(1) {
+            width: 90%;
+            height: 30px;
+            /* border: 1px solid black; */
+            display: flex;
+            margin: auto;
+            margin-top: 30px;
+        }
+
+        #login>div:nth-child(1)>i {
+            width: 3%;
+            height: 22px;
+            /* border: 1px solid red; */
+            margin-left: 20px;
+            margin-top: 2px;
+            border-radius: 15px;
+            box-sizing: border-box;
+            padding-left: 6px;
+            padding-top: 3px;
+            background-color: rgb(5, 188, 5);
+            color: white;
+        }
+
+        #login>div:nth-child(2) {
+            width: 30%;
+            height: 30px;
+            /* border: 1px solid black; */
+            display: flex;
+            justify-content: space-between;
+            margin-left: 5%;
+            margin-top: 20px;
+        }
+
+        #address {
+            width: 100%;
+            height: 180px;
+            border: 1px solid rgb(199, 199, 199);
+            background-color: white;
+            /* margin-top: 20px; */
+
+        }
+
+        #address>div:nth-child(1) {
+            width: 90%;
+            height: 70px;
+            /* border: 1px solid black; */
+            display: flex;
+            margin: auto;
+            /* margin-top: 25px; */
+            box-sizing: border-box;
+            padding-top: 25px;
+        }
+
+        #address>div:nth-child(1)>i {
+            width: 3%;
+            height: 22px;
+            /* border: 1px solid red; */
+            margin-left: 20px;
+            margin-top: 2px;
+            border-radius: 15px;
+            box-sizing: border-box;
+            padding-left: 6px;
+            padding-top: 3px;
+            background-color: rgb(5, 188, 5);
+            color: white;
+        }
+
+        #address>div:nth-child(1)>h5 {
+            color: orangered;
+            box-sizing: border-box;
+            margin-left: 65%;
+        }
+
+        #address>div:nth-child(2) {
+            width: 90%;
+            height: 20px;
+            /* border: 1px solid black; */
+            /* display: flex; */
+            justify-content: space-between;
+            margin-left: 5%;
+            margin-top: 0px;
+        }
+
+        #address>div:nth-child(2)>p {
+            box-sizing: border-box;
+            padding-top: 5px;
+            font-size: 14px;
+            color: grey;
+        }
+
+        #address>div:nth-child(3) {
+            width: 90%;
+            height: 20px;
+            /* border: 1px solid black; */
+            margin-left: 5%;
+            margin-top: 50px;
+        }
+
+        #payment {
+            width: 100%;
+            height: 900px;
+            /* border: 1px solid black; */
+            background-color: white;
+            margin-top: 20px;
+
+
+        }
+
+        #payment>div:nth-child(1) {
+            width: 90%;
+            height: 40px;
+            /* border: 1px solid black; */
+            margin: auto;
+            margin-top: 25px;
+            box-sizing: border-box;
+            padding-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        #payment>div:nth-child(2) {
+            width: 90%;
+            height: 1050px;
+            /* border: 1px solid black; */
+            margin: auto;
+            box-sizing: border-box;
+            padding-top: 10px;
+            margin-bottom: 50px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #l {
+            width: 32%;
+            height: 750px;
+            /* border: 1px solid red; */
+            background-color: rgb(237, 241, 243);
+        }
+
+        #li {
+            width: 95%;
+            height: 390px;
+            /* border: 1px solid red; */
+            box-sizing: border-box;
+            margin-left: 5%;
+
+
+        }
+
+        #li>div {
+            width: 100%;
+            height: 70px;
+            /* border: 1px solid black; */
+            display: flex;
+            color: grey;
+            font-size: 100px;
+
+        }
+
+        #li>div:nth-child(1) {
+            margin-top: 15px;
+            background-color: white;
+            color: black;
+        }
+
+        #li>div:nth-child(1)>h4 {
+            font-size: 18px;
+        }
+
+        #li>div:nth-child(2)>h6 {
+            font-size: 13px;
+            width: 30px;
+            height: 17px;
+            border: 1px solid red;
+            color: white;
+            background-color: orangered;
+            box-sizing: border-box;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+
+        #li>div>i {
+            margin-left: 15px;
+            margin-top: 20px;
+            font-size: 20px;
+        }
+
+        #li>div>h4 {
+            margin-left: 15px;
+            margin-top: 20px;
+            font-size: 15px;
+        }
+
+        #r {
+            width: 64%;
+            height: 700px;
+            /* border: 1px solid grey; */
+        }
+
+        #r>div {
+            width: 100%;
+            height: 150px;
+            border: 1px solid rgb(234, 228, 228);
+            margin-bottom: 20px;
+        }
+
+        #r>div>div>img {
+            width: 10%;
+            height: 40px;
+            margin-left: 25px;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        #r>div>:nth-child(2) {
+            margin-left: 25px;
+        }
+
+        #r>div>:nth-child(3) {
+            color: red;
+            margin-left: 25px;
+            margin-top: 20px;
+        }
+
+        #r>div:nth-child(1)>:nth-child(3) {
+            width: 30%;
+            height: 35px;
+            margin-left: 25px;
+            margin-top: 10px;
+            /* border: 1px solid red; */
+            background-color: green;
+            color: white;
+            font-size: 16px;
+            box-sizing: border-box;
+            padding-top: 10px;
+            text-align: center;
+        }
+
+        #image {
+            width: 85%;
+            height: 80px;
+            /* border: 1px solid red; */
+            margin: auto;
+            margin-top: 15px;
+            display: flex;
+            background-color: white;
+            /* position: fixed; */
+        }
+
+        #image>:nth-child(1) {
+            width: 20%;
+            height: 50px;
+            /* border: 1px solid red; */
+            margin-top: 6px;
+        }
+
+        #image>:nth-child(1)>img {
+            width: 90%;
+            height: 50px;
+            /* border: 1px solid red; */
+            /* margin-top: 4px; */
+            /* margin-left: 4px */
+        }
+
+        #image>:nth-child(2) {
+            width: 75%;
+            height: 60px;
+            /* border: 1px solid red; */
+            margin-left: 15px;
+            margin-top: 4px;
+        }
+
+        #image>:nth-child(2)>:nth-child(2) {
+            color: grey;
+            margin-top: 3px;
+        }
+
+        #image>:nth-child(2)>:nth-child(3) {
+            width: 15%;
+            height: 3px;
+            /* border: 1px solid red; */
+            margin-top: 12px;
+            background-color: grey;
+        }
+
+        #item {
+            width: 85%;
+            height: 150px;
+            /* border: 1px solid red; */
+            margin-left: 7.5%;
+            margin-top: 30px;
+            display: flex;
+        }
+
+        #item>div {
+            width: 50%;
+            height: 150px;
+            /* border: 1px solid red; */
+
+        }
+
+        #item>div>div {
+            width: 100%;
+            height: 30px;
+            /* border: 1px solid red; */
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 25px;
+
+        }
+
+        #item>div>div>div {
+            width: 43%;
+            height: 28px;
+            border: 1px solid green;
+
+        }
+
+        #item>div:nth-child(1)>div>div:nth-child(1) {
+            width: 7.5%;
+            height: 13px;
+            border: 1px solid green;
+            margin-top: 9px;
+            font-size: 7px;
+            color: green;
+            text-align: center;
+            box-sizing: border-box;
+            padding-top: 1.5px;
+        }
+
+        #item>div:nth-child(1)>div>div:nth-child(2) {
+            width: 86%;
+            height: 17px;
+            /* border: 1px solid red; */
+            margin-top: 6px;
+            border: none;
+        }
+
+        #item>div:nth-child(2)>div>div:nth-child(1) {
+            color: green;
+            display: flex;
+            font-size: 21px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #item>div:nth-child(2)>div>div:nth-child(1)>h5 {
+            box-sizing: border-box;
+            padding-top: 3px;
+            /* border: 5px solid red; */
+        }
+
+        #item>div:nth-child(2)>div>div:nth-child(2)>p {
+            box-sizing: border-box;
+            padding-top: 5px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 300;
+            padding-left: 35px;
+        }
+
+        #item>div:nth-child(2)>div>div:nth-child(2) {
+            border: none;
+        }
+
+        #suggestion {
+            width: 85%;
+            height: 50px;
+            /* border: 1px solid red; */
+            background-color: rgb(237, 241, 243);
+            margin-left: 7.5%;
+            margin-top: 30px;
+            color: grey;
+            display: flex;
+            box-sizing: border-box;
+            padding-top: 15px;
+        }
+
+        #suggestion>:nth-child(1) {
+            margin-top: 1px;
+            margin-left: 25px;
+            font-size: 25px;
+            font-weight: bolder;
+            color: black;
+        }
+
+        #suggestion>:nth-child(2) {
+            margin-left: 20px;
+            font-size: 13px;
+        }
+
+        #opt {
+            width: 85%;
+            height: 100px;
+            border: 1px solid grey;
+            margin-left: 7.5%;
+            margin-top: 20px;
+            color: grey;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #opt>div:nth-child(1) {
+            width: 5%;
+            height: 16px;
+            /* border: 1px solid black; */
+            margin-top: 8px;
+
+        }
+
+        #opt>div:nth-child(1)>button {
+            color: white;
+            width: 100%;
+            height: 100%;
+
+        }
+
+
+        #opt>div:nth-child(2) {
+            width: 85%;
+            height: 100px;
+            /* border: 1px solid black; */
+
+        }
+
+        #opt>div:nth-child(2)>:nth-child(1) {
+            color: black;
+            font-weight: 900;
+            margin-top: 5px;
+        }
+
+        #opt>div:nth-child(2)>:nth-child(2) {
+            font-size: 15px;
+        }
+
+        #apply {
+            width: 85%;
+            height: 50px;
+            border: 1px dotted grey;
+            margin-left: 7.5%;
+            margin-top: 20px;
+            color: grey;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #apply>div:nth-child(1) {
+            width: 6%;
+            height: 20px;
+            /* border: 1px solid black; */
+            margin-top: 13px;
+
+        }
+
+        #apply>div:nth-child(2) {
+            width: 85%;
+            height: 50px;
+            /* border: 1px solid black; */
+            color: rgb(18, 17, 17);
+            box-sizing: border-box;
+            padding-top: 15px;
+        }
+
+        #bill {
+            width: 85%;
+            height: 100px;
+            /* border: 1px solid grey; */
+            margin-left: 7.5%;
+            margin-top: 20px;
+            color: rgb(25, 25, 25);
+            /* display: flex;
+            justify-content: space-around; */
+            border-bottom: 1px solid rgb(223, 219, 219);
+        }
+
+        #bill>div:nth-child(1) {
+            width: 100%;
+            height: 15px;
+            /* border: 1px solid black; */
+            /* margin-top: 13px; */
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        #bill>div:nth-child(2) {
+            width: 100%;
+            height: 60px;
+            /* border: 1px solid black; */
+            color: rgb(18, 17, 17);
+            display: flex;
+            margin-top: 10px;
+        }
+
+        #bill>div:nth-child(2)>:nth-child(1) {
+            width: 70%;
+            height: 60px;
+            /* border: 1px solid black; */
+            color: grey;
+        }
+
+        #bill>div:nth-child(2)>:nth-child(1)>h5 {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        #bill>div:nth-child(2)>:nth-child(2) {
+            width: 30%;
+            height: 60px;
+            /* border: 1px solid black; */
+            color: grey;
+        }
+
+        #bill>div:nth-child(2)>:nth-child(2)>h5 {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 14px;
+            text-align: right;
+        }
+
+        #gov {
+            width: 85%;
+            height: 40px;
+            /* border: 1px solid black;  */
+            font-weight: 700;
+            font-size: 14px;
+            margin-left: 7.5%;
+            border-bottom: 1px solid rgb(105, 103, 103);
+            display: flex;
+            margin-top: 10px;
+        }
+
+        #gov>div:nth-child(1) {
+            width: 70%;
+            height: 40px;
+            /* border: 1px solid red; */
+            color: grey;
+            font-size: 15px;
+        }
+
+        #gov>div:nth-child(2) {
+            width: 30%;
+            height: 40px;
+            /* border: 1px solid red; */
+            color: grey;
+            text-align: right;
+            font-size: 15px;
+        }
+
+        #pay {
+            width: 90%;
+            height: 30px;
+            /* border: 1px solid red; */
+            margin-left: 7.5%;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #pay>div:nth-child(1) {
+            width: 30%;
+            height: 30px;
+            /* border: 1px solid red; */
+            font-weight: bolder;
+        }
+
+        #pay>div:nth-child(2) {
+            width: 30%;
+            height: 30px;
+            /* border: 1px solid red; */
+            text-align: right;
+            font-size: 18px;
+            font-weight: bolder;
+        }
+
+        #saving {
+            width: 100%;
+            height: 65px;
+            border: 1px solid rgb(237, 241, 243);
+            background-color: rgb(237, 241, 243);
+            border-right: none;
+        }
+
+        #saving>div:nth-child(1) {
+            width: 99%;
+            height: 35px;
+            border: 1px solid grey;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            background-color: rgb(237, 241, 243);
+        }
+
+        #saving>div>h4 {
+            color: grey;
+            margin-top: 5px;
+            margin-left: 7.5%;
+        }
+
+        #review {
+            width: 100%;
+            height: 240px;
+            /* border: 1px solid red; */
+
+        }
+
+        #review>div:nth-child(1) {
+            width: 85%;
+            height: 210px;
+            border: 1px solid rgb(219, 217, 217);
+            margin: auto;
+            margin-top: 15px;
+        }
+
+        #review>div:nth-child(1)>:nth-child(1)>h3 {
+            font-size: 17px;
+            margin-top: 15px;
+            margin-left: 10px;
+        }
+
+        #review>div:nth-child(1)>:nth-child(2) {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        #review>div:nth-child(1)>:nth-child(2)>:nth-child(1) {
+            margin-left: 10px;
+            font-size: 14px;
+            color: grey;
+        }
+
+        #review>div:nth-child(1)>:nth-child(2)>:nth-child(1)>s {
+            color: red;
+        }
+        #review>div:nth-child(1)>:nth-child(3) {
+            margin-top: 20px;
+            color: grey;
+            margin-left: 10px;
+            font-size: 14px;
+        }
+        #review>div:nth-child(1)>:nth-child(4) {
+            margin-top: 20px;
+            color: red;
+            text-decoration: underline;
+            margin-left: 10px;
+            font-size: 14px;
+        }
+        #footer {
+            width: 100%;
+            height: 1150px;
+            border: 1px solid rgb(1, 1, 26);
+            /* margin-top: 20px; */
+            background-color: rgb(1, 1, 22);
+        }
+
+        #top {
+            width: 88%;
+            height: 335px;
+            /* border: 1px solid blue; */
+            /* margin-top: 20px; */
+            margin-left: 6%;
+            margin-top: 60px;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid grey;
+            color: rgb(230, 218, 218);
+            font-weight: lighter;
+        }
+
+        #top>div:nth-child(1) {
+            width: 16%;
+            height: 330px;
+            /* border: 1px solid blue; */
+            line-height: 30px;
+            font-size: 15px;
+
+        }
+
+        #top>div:nth-child(1)>h4 {
+            margin-bottom: 20px;
+            color: rgb(165, 163, 163);
+
+        }
+
+        #top>div:nth-child(2) {
+            width: 13%;
+            height: 330px;
+            /* border: 1px solid blue; */
+            line-height: 30px;
+            font-size: 15px;
+
+        }
+
+        #top>div:nth-child(2)>h4 {
+            margin-bottom: 20px;
+            color: rgb(165, 163, 163);
+
+        }
+
+        #top>div:nth-child(3) {
+            width: 30%;
+            height: 330px;
+            /* border: 1px solid blue; */
+            line-height: 27px;
+            font-size: 15px;
+
+        }
+
+        #top>div:nth-child(3)>h4 {
+            margin-bottom: 20px;
+            color: rgb(165, 163, 163);
+
+        }
+
+        #top>div:nth-child(4) {
+            width: 20%;
+            height: 330px;
+            /* border: 1px solid blue; */
+
+        }
+
+        #top>div:nth-child(4)>img {
+            width: 100%;
+            height: 70px;
+            margin-bottom: 30px;
+
+        }
+
+        #bottom {
+            width: 88%;
+            height: 610px;
+            /* border: 1px solid blue; */
+            margin-top: 30px;
+            margin-left: 6%;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid grey;
+
+            font-weight: lighter;
+        }
+
+        #bottom>div {
+            width: 15%;
+            height: 560px;
+            /* border: 1px solid blue; */
+            line-height: 30px;
+            font-size: 15px;
+            color: rgb(230, 218, 218);
+        }
+
+        #bottom>div:nth-child(1)>h4 {
+            margin-bottom: 15px;
+            color: rgb(165, 163, 163);
+        }
+
+        #bottom>div:nth-child(2)>h4 {
+            margin-bottom: 15px;
+            color: rgb(1, 1, 22);
+        }
+
+        #bottom>div:nth-child(3)>h4 {
+            margin-bottom: 15px;
+            color: rgb(1, 1, 22);
+        }
+
+        #bottom>div:nth-child(4)>h4 {
+            margin-bottom: 15px;
+            color: rgb(1, 1, 22);
+        }
+        #end{
+            width: 88%;
+            height: 100px;
+            /* border: 1px solid blue; */
+            margin-left: 6%;
+            display: flex;
+        }
+        #end>:nth-child(1){
+            width: 13%;
+            height: 40px;
+            /* border: 1px solid blue; */
+            margin-top: 30px;
+        }
+        #end>p{
+            width: 60%;
+            height: 25px;
+            /* border: 1px solid blue; */
+            margin-top: 40px;
+            margin-left: 5%;
+            color: white;
+            font-size: 20px;
+            text-align: center;
+        }
+        #end>:nth-child(3){
+            width: 2%;
+            height: 22px;
+            /* border: 1px solid blue; */
+            margin-top: 40px;
+            margin-left: 5%;
+        }
+        #end>:nth-child(4){
+            width: 2%;
+            height: 22px;
+            /* border: 1px solid blue; */
+            margin-top: 40px;
+            margin-left: 2%;
+        }
+        #end>:nth-child(5){
+            width: 2%;
+            height: 22px;
+            /* border: 1px solid blue; */
+            margin-top: 40px;
+            margin-left: 2%;
+        }
+        #end>:nth-child(6){
+            width: 2%;
+            height: 22px;
+            /* border: 1px solid blue; */
+            margin-top: 40px;
+            margin-left: 2%;
+        }
+        #end>:nth-child(7){
+            width: 2%;
+            height: 22px;
+            /* border: 1px solid blue; */
+            margin-top: 40px;
+            margin-left: 2%;
+        }
+        @media screen and (max-width: 500px){
+        #screen{
+            display: flex;
+            flex-direction: column;
+        }
+        #navbars{
+            display: none;
+        }
+        #main{
+            display: flex;
+            flex-direction: column;
+        }
+       
+    }
+    </style>
+</head>
+
+<body>
+    
+
+    <div id="screen">
+        <div id="nav">
+            <div id="navbars">
+                <div id="navbar">
+                    <div>
+                        <img src="https://logosandtypes.com/wp-content/uploads/2021/01/Swiggy.png" />
+        
+                    </div>
+                    <div>
+                        <p>Vashi</p>
+                        <p>Navi Mumbai, Maharashtra, India</p>
+                        <select></select>
+                    </div>
+                    <div>
+                        <div>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <p>Search</p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-gear"></i>
+                            <p>Offers<sup>NEW</sup></p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-circle-info"></i>
+                            <p>Help</p>
+                        </div>
+                       
+                        <div>
+                            <i class="fa-brands fa-square-font-awesome-stroke"></i>
+                            <p>Cart</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="main">
+            <div id="left">
+                <!-- <div id="login"> -->
+                    <!-- <div>
+                        <h3>Logged in</h3>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </div> -->
+                    <!-- <div>
+                        <h3>VRUSHABH</h3>
+                        <p>|</p>
+                        <h3> 9561125686</h3>
+                    </div> -->
+                <!-- </div> -->
+                <div id="address">
+                    <div>
+                        <h3>Delivery address</h3>
+                        <i class="fa-solid fa-angle-right"></i>
+                        <h5>CHANGE</h5>
+                    </div>
+                    <div>
+                        <h4>Other</h4>
+                        <p>56456, 3XFX+Q4V, Juhu Nagar, Sector 2, Vashi, Navi Mumbai, Maharashtra </br>400703, India</p>
+
+                    </div>
+                    <div>
+                        <h5>18 MINS</h5>
+                    </div>
+                </div>
+                <div id="practproduct"></div>
+                <div id="payment">
+                    <div>
+                        <h3>Choose payment method</h3>
+                    </div>
+                    <div>
+                        <div id="l">
+                            <div id="li">
+                                <div>
+                                    <i class="fa-solid fa-wallet"></i>
+                                    <h4>Wallets</h4>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-money-bill"></i>
+                                    <h4>UPI</h4>
+                                    <h6>New</h6>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-credit-card"></i>
+                                    <h4>Sodexo</h4>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-building-columns"></i>
+                                    <h4>Netbanking</h4>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-credit-card"></i>
+                                    <h4>Credit & Debit cards</h4>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-money-check-dollar"></i>
+                                    <h4>Pay on Delivery</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="r">
+                            <div>
+                                <div>
+                                    <img
+                                        src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_80/Amazon_Pay_Logos/Pay/logo_pay-primary-fullcolor-positive" />
+                                </div>
+                                <div>
+                                    <h4>Amazon Pay</h4>
+                                </div>
+                                <div>
+                                    <h5>PAY ₹351</h5>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <img
+                                        src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_80/PaymentLogos/paymentIcons/wallets/paytm" />
+                                </div>
+                                <div>
+                                    <h4>Paytm</h4>
+                                </div>
+                                <div>
+                                    <h5>LINK ACCOUNT</h5>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <img
+                                        src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_80/phonepe_icon_aca9jf" />
+                                </div>
+                                <div>
+                                    <h4>PhonePe (Wallet/UPI/Cards)</h4>
+                                </div>
+                                <div>
+                                    <h5>LINK ACCOUNT</h5>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <img
+                                        src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_80/v1612413183/PaymentLogos/Mobikwik" />
+                                </div>
+                                <div>
+                                    <h4>MobiKwik</h4>
+                                </div>
+                                <div>
+                                    <h5>LINK ACCOUNT</h5>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="right">
+                <div id="image">
+                    <div><img
+                            src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/zpkkdkmvlj5cuvqbc50t" />
+                    </div>
+                    <div>
+                        <h4>The Chinese Corner</h4>
+                        <h5>Vashi</h5>
+                        <div></div>
+                    </div>
+                </div>
+                <div id="item">
+                    <div>
+                        <div>
+                            <div>
+                                <i class="fa-solid fa-circle"></i>
+                            </div>
+                            <div>
+                                <h5>Pav -4</h5>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <i class="fa-solid fa-circle"></i>
+                            </div>
+                            <div>
+                                <h5>White Bread</h5>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <i class="fa-solid fa-circle"></i>
+                            </div>
+                            <div>
+                                <h5>Herbed Garlic Loaf</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <div>
+                                <h4>-</h4>
+                                <h5>1</h5>
+                                <h4>+</h4>
+                            </div>
+                            <div>
+                                <p>₹ 59</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <h4>-</h4>
+                                <h5>1</h5>
+                                <h4>+</h4>
+                            </div>
+                            <div>
+                                <p>₹ 99</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <h4>-</h4>
+                                <h5>1</h5>
+                                <h4>+</h4>
+                            </div>
+                            <div>
+                                <p>₹ 79</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="suggestion">
+                    <p>"</p>
+                    <p>Any suggestion? we will pass it on...</p>
+                </div>
+                <div id="opt">
+                    <div><button>a</button></div>
+                    <div>
+                        <p>Opt in for No-contact Delivery</p>
+                        <p> Unwell, or avoiding contact? Please select no-contact delivery. Partner will safely place
+                            the
+                            order outside your door (not for COD)</p>
+                    </div>
+
+                </div>
+                <div id="apply">
+                    <div>
+                        <i class="fa-sharp fa-light fa-tire-rugged"></i>
+                    </div>
+                    <div>
+                        <p>Apply Coupon</p>
+                    </div>
+                </div>
+                <div id="bill">
+                    <div>
+                        <p>Bill Details</p>
+                    </div>
+                    <div>
+                        <div>
+                            <h5>tem Total</h5>
+
+                            <h5> Delivery Fee | 0.7 kms</h5>
+                        </div>
+                        <div>
+                            <h5>₹ 2160</h5>
+                            <h5>₹ 34</h5>
+                        </div>
+                    </div>
+                </div>
+                <div id="gov">
+                    <div>
+                        <h5>Govt Taxes & Other Charge</h5>
+                    </div>
+                    <div>
+                        <h5>₹ 388.80</h5>
+                    </div>
+                </div>
+                <div id="pay">
+                    <div>
+                        <h5>TO PAY</h5>
+                    </div>
+                    <div>
+                        <h5>₹ 2583</h5>
+                    </div>
+
+                </div>
+                <div id="saving">
+                    <div>
+                        <h4>Savings of ₹75</h4>
+                    </div>
+                </div>
+                <div id="review">
+                    <div>
+                        <div>
+                            <h3>Review your order and address </br>details to avoid cancellations</h3>
+                        </div>
+                        <div>
+                            <p><s>Note: </s>If you cancel within 60 seconds of placing </br>your order, a 100% refund
+                                will be issued. No </br>refund for cancellations made after 60 seconds.
+                            </p>
+                        </div>
+                        <div>
+                            <p>Avoid cancellation as it leads to food wastage.</p>
+                        </div>
+                        <div><p>Read cancelatiom policy</p></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div id="footer">
+        <div id="top">
+            <div>
+                <h4>COMPANY</h4>
+                <h3> About us</h3>
+                <h3> Team</h3>
+                <h3> Careers</h3>
+                <h3> Swiggy Blog</h3>
+                <h3> Bug Bounty</h3>
+                <h3>Swiggy One</h3>
+                <h3> Swiggy Corporate</h3>
+                <h3> Swiggy Instamar</h3>
+                <h3> Swiggy Genie</h3>
+
+            </div>
+            <div>
+                <h4>CONTACT</h4>
+                <h3>Help & Support</h3>
+                <h3>Partner with us</h3>
+                <h3>Ride with us</hh3>
+            </div>
+            <div>
+                <h4>LEGAL</h4>
+
+
+                <h3> Terms & Conditions</h3>
+                <h3> Refund & Cancellation</h3>
+                <h3> Privacy Policy</h3>
+                <h3> Cookie Policy</h3>
+                <h3> Offer Terms</h3>
+                <h3> Phishing & Fraud</h3>
+                <h3> Corporate - Swiggy Money Codes Terms and Conditions</h3>
+                <h3> Corporate - Swiggy Discount Voucher Terms and Conditions</h3>
+            </div>
+            <div>
+                <img
+                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_200,h_65/icon-AppStore_lg30tv" />
+                <img
+                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_200,h_65/icon-GooglePlay_1_zixjxl" />
+            </div>
+        </div>
+        <div id="bottom">
+            <div>
+                <h4>WE DELIVER TO</h4>
+                <h3></h3>
+                <h3> Abohar</h3>
+                <h3> Adilabad</h3>
+                <h3> Adityapur</h3>
+                <h3> Adoni</h3>
+                <h3> Agartala</h3>
+                <h3> Agra</h3>
+                <h3> Ahmedabad</h3>
+                <h3> Ahmednagar</h3>
+                <h3> Aizawl</h3>
+                <h3> Ajmer</h3>
+                <h3> Akola</h3>
+                <h3> Alappuzha</h3>
+                <h3> Aligarh</h3>
+                <h3> Alipurduar</h3>
+                <h3> Allahabad</h3>
+                <h3> Almora</h3>
+                <h3> Alwar</h3>
+            </div>
+            <div>
+                <h4>.</h4>
+                <h3> Dehradun</h3>
+                <h3> Dehri</h3>
+                <h3> Delhi</h3>
+                <h3> Deoghar</h3>
+                <h3> Deoria-City</h3>
+                <h3> Dewas</h3>
+                <h3> Dhanbad</h3>
+                <h3> Dhar</h3>
+                <h3> Dharamshala</h3>
+                <h3> Dharapuram</h3>
+                <h3> Dharmapuri</h3>
+                <h3> Dharwad</h3>
+                <h3> Dholpur</h3>
+                <h3> Dhule</h3>
+                <h3> Dibrugarh</h3>
+                <h3> Digboi</h3>
+                <h3> Dimapur</h3>
+
+            </div>
+            <div>
+                <h4>.</h4>
+                <h3> Khanna</h3>
+                <h3> Kharagpur</h3>
+                <h3> Kishanganj</h3>
+                <h3> Kishangarh</h3>
+                <h3>Kochi</h3>
+                <h3> Kodaikanal</h3>
+                <h3> Kohima</h3>
+                <h3> Kokrajhar</h3>
+                <h3> Kolar</h3>
+                <h3> Kolhapur</h3>
+                <h3> Kolkata</h3>
+                <h3> Kollam</h3>
+                <h3> Koppal</h3>
+                <h3> Korba</h3>
+                <h3> Kota</h3>
+                <h3> Kotdwar</h3>
+                <h3> Kothagudem</h3>
+            </div>
+            <div>
+                <h4>.</h4>
+                <h3> Purulia </h3>
+                <h3> Pusad </h3>
+                <h3> Puttur </h3>
+                <h3> Rae-Bareli </h3>
+                <h3> Raghunathpur </h3>
+                <h3> Raichur </h3>
+                <h3> Raiganj </h3>
+                <h3> Raigarh </h3>
+                <h3> Raipur </h3>
+                <h3> Rajahmundry </h3>
+                <h3> Rajampet </h3>
+                <h3> Rajapalayam </h3>
+                <h3> Rajgarh </h3>
+                <h3> Rajkot </h3>
+                <h3> Rajnandgaon </h3>
+                <h3> Rajsamand </h3>
+                <h3> Ramagundam </h3>
+
+            </div>
+        </div>
+        <div id="end">
+            <img
+                src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_284/Logo_f5xzza" />
+            <p>@ 2023 Swiggy</p>
+            <img
+                src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_48,h_48/icon-facebook_tfqsuc" />
+            <img
+                src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_48,h_48/icon-pinterest_kmz2wd" />
+            <img
+                src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_48,h_48/icon-instagram_b7nubh" />
+            <img
+                src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_48,h_48/icon-instagram_b7nubh" />
+            <img
+                src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_48,h_48/icon-twitter_gtq8dv" />
+        </div>
+
+    </div>
+</div>
+</div>
+
+<script>
+
+    window.onload = function () {
+        var currentUser = JSON.parse(localStorage.getItem("S_currentuser"));
+        var data = JSON.parse(localStorage.getItem("S_user"));
+        var divtoappendproduct = document.getElementById("practproduct");
+
+        var products;
+        for (var i = 0; i < data.length; i++) {
+            if (currentUser.email == data[i].email) {
+
+                products = data[i].cartproduct;
+            }
+        }
+        // console.log(currentproducts);
+        var finaldata = "";
+        for (var i = 0; i < products.length; i++) {
+            finaldata += `<div id="cart"><div><img src='${products[i].pimage}'/></div>
+                <div><h3>${products[i].pname}</h3>
+                <h4>Rs.${products[i].pprice}</h4></div>
+                </div>`;
+        }
+        divtoappendproduct.innerHTML = finaldata;
+    }
+</script>
+
+</body>
+
+</html>

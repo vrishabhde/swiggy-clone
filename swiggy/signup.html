@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://kit.fontawesome.com/5e60e11a93.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup5</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #screen {
+            width: 35%;
+            height: 500px;
+            /* border: 5px solid red; */
+            margin: auto;
+        }
+
+        #cross {
+            width: 5%;
+            height: 20px;
+            /* border: 1px solid red; */
+            margin-left: 47px;
+            margin-top: 25px;
+        }
+
+        #cross>i {
+            font-size: 25px;
+            color: grey;
+
+        }
+
+        #login {
+            width: 80%;
+            height: 120px;
+            /* border: 1px solid red; */
+            margin: auto;
+            display: flex;
+            margin-top: 50px;
+        }
+
+        #login>div:nth-child(1) {
+            width: 65%;
+            height: 120px;
+            /* border: 1px solid red; */
+        }
+
+        #login>div:nth-child(1)>:nth-child(1) {
+            font-size: 20px;
+        }
+
+        #login>div:nth-child(1)>:nth-child(2) {
+            display: flex;
+            justify-content: space-between;
+            width: 65%;
+            margin-top: 15px;
+        }
+
+        #login>div:nth-child(1)>:nth-child(2)>:nth-child(2) {
+            color: rgb(255, 68, 0);
+            margin-left: 3px;
+        }
+
+        #login>div:nth-child(1)>:nth-child(3) {
+            width: 10%;
+            height: 2px;
+            /* border: 1px solid red; */
+            background-color: grey;
+            border-radius: 5px;
+            margin-top: 25px;
+        }
+
+        #login>div:nth-child(2) {
+            width: 35%;
+            height: 120px;
+            /* border: 1px solid red; */
+            align-items: right;
+            text-align: right;
+        }
+
+        #login>div:nth-child(2)>img {
+            width: 78%;
+            height: 100px;
+            /* border: 1px solid red; */
+            align-items: right;
+        }
+
+        #phone {
+            width: 80%;
+            height: 70px;
+            border: 1px solid grey;
+            margin: auto;
+            margin-top: 10px;
+        }
+
+        #phone>p {
+            color: grey;
+            margin-top: 10px;
+            box-sizing: border-box;
+            padding-left: 10px;
+        }
+
+        #phone>input {
+            margin-top: 15px;
+            border: none;
+            outline: none;
+            box-sizing: border-box;
+            padding-left: 10px;
+        }
+
+        #name {
+            width: 80%;
+            height: 70px;
+            border: 1px solid grey;
+            margin: auto;
+            margin-top: 20px;
+        }
+
+        #name>p {
+            color: grey;
+            margin-top: 10px;
+            box-sizing: border-box;
+            padding-left: 10px;
+        }
+
+        #name>input {
+            margin-top: 15px;
+            border: none;
+            outline: none;
+            box-sizing: border-box;
+            padding-left: 10px;
+        }
+
+        #email {
+            width: 80%;
+            height: 70px;
+            border: 1px solid grey;
+            margin: auto;
+            margin-top: 20px;
+        }
+
+        #email>p {
+            color: grey;
+            margin-top: 10px;
+            box-sizing: border-box;
+            padding-left: 10px;
+        }
+
+        #email>input {
+            margin-top: 15px;
+            border: none;
+            outline: none;
+            box-sizing: border-box;
+            padding-left: 10px;
+        }
+
+        #code {
+            width: 80%;
+            height: 20px;
+            /* border: 1px solid red; */
+            color: blue;
+            margin: auto;
+            margin-top: 10px;
+            font-size: 15px;
+        }
+
+        #orange {
+            width: 80%;
+            height: 50px;
+            /* border: 1px solid red; */
+            margin: auto;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            background-color: orangered;
+            color: white;
+        }
+
+        #orange>button {
+            text-align: center;
+            box-sizing: border-box;
+            padding-top: 18px;
+            font-weight: bold;
+            margin-left: 160px;
+            background-color: orangered;
+            border: none;
+        }
+
+        #para {
+            width: 80%;
+            height: 20px;
+            /* border: 1px solid red; */
+            margin: auto;
+            font-size: 14px;
+            margin-top: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <form onsubmit="signup(event)">
+        <div id="screen">
+            <div id="cross">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+
+            <div id="login">
+                <div>
+                    <div>
+                        <h2>Sign Up</h2>
+                    </div>
+                    <div>
+                        <p>or</p>
+                        <p>login to your account</p>
+                    </div>
+                    <div> </div>
+                </div>
+                <div>
+                    <img
+                        src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/Image-login_btpq7r" />
+                </div>
+            </div>
+            <div id="phone">
+                <p>name</p>
+                <input type="name" id="uname" />
+            </div>
+            <div id="phone">
+                <p>email</p>
+                <input type="email" id="uemail" />
+            </div>
+            <div id="phone">
+                <p>password</p>
+                <input type="password" id="upassword" />
+            </div>
+            <div id="code">
+                <p>Have a refferal code ?</p>
+            </div>
+            <div id="orange">
+                <button onclick="signup">LOGIN</button>
+            </div>
+            <div id="para">
+                <p>By clicking on Login, I accept the Terms & Conditions &</br> Privacy Policy</p>
+            </div>
+        </div>
+    </form>
+    <script src="./signup.js"></script>
+</body>
+
+</html>

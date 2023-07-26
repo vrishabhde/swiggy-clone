@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addproduct</title>
+</head>
+<body>
+    <form onsubmit="addproduct(event)">
+        <label>product title</label></br>   
+        <input type="text" id="ptitle" /></br>
+        <label> product name</label></br>
+        <input type="text" id="pname" /></br>
+        <label> product price</label></br>
+        <input type="number" id="pprice" /></br>
+        <label> product image</label></br>
+        <input type="text" id="pimage"/></br>
+        <input type="submit"/>
+    </form>
+
+    <script>
+        function addproduct(event){
+            event.preventDefault();
+            // alert("product adding....");
+            var pname = document.getElementById("pname").value;
+            var ptitle = document.getElementById("ptitle").value;
+            var pprice = document.getElementById("pprice").value;
+            var pimage = document.getElementById("pimage").value;
+
+            var product = {pname, ptitle, pprice, pimage};
+
+            var ls = JSON.parse(localStorage.getItem("spractice_product")) || [];
+
+            ls.push(product);
+        
+            localStorage.setItem("spractice_product", JSON.stringify(ls));
+
+            alert("product added successfully");
+            window.location.href = `./home.html`;
+            var pname = document.getElementById("pname").value ="";
+            var ptitle = document.getElementById("ptitle").value ="";
+            var pprice = document.getElementById("pprice").value = "";
+            var pimage = document.getElementById("pimage").value = "";
+        }
+    </script>
+</body>
+</html>
+   
